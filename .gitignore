@@ -1,0 +1,16 @@
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+# Ignore pdfs in the docs directory
+docs/**/*.pdf
+
+# Ignore git time metrics
+/.gtm/
+
+# Ignore vendor files
+vendor/

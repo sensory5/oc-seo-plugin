@@ -1,0 +1,82 @@
+tabs:
+  fields:
+    enable_title:
+      label: sensory5.seo::lang.settings.tab_settings.site
+      comment: sensory5.seo::lang.settings.tab_settings.site_comment
+      type: switch
+      span: left
+      tab: sensory5.seo::lang.settings.tab_settings.label
+
+    enable_canonical_url:
+      label: sensory5.seo::lang.settings.tab_settings.canonical
+      type: switch
+      comment: sensory5.seo::lang.settings.tab_settings.canonical_comment
+      tab: sensory5.seo::lang.settings.tab_settings.label
+      span: right
+
+    title:
+      label: sensory5.seo::lang.settings.tab_settings.sitename
+      commentAbove: sensory5.seo::lang.settings.tab_settings.sitename_comment_above
+      span: left
+      comment: sensory5.seo::lang.settings.tab_settings.sitename_comment
+      tab: sensory5.seo::lang.settings.tab_settings.label
+      placeholder: sensory5.seo::lang.settings.tab_settings.sitename_placeholder
+
+    title_position:
+      label: sensory5.seo::lang.settings.tab_settings.title_position
+      type: radio
+      span: right
+      tab: sensory5.seo::lang.settings.tab_settings.label
+      comment: sensory5.seo::lang.settings.tab_settings.title_position_comment
+      options:
+        prefix: sensory5.seo::lang.settings.tab_settings.title_position_prefix
+        suffix: sensory5.seo::lang.settings.tab_settings.title_position_suffix
+
+    content:
+      type: hint
+      path: $/sensory5/seo/models/settings/_other_tags_hint.htm
+      tab: sensory5.seo::lang.settings.tab_settings.label
+
+    other_tags:
+      label: sensory5.seo::lang.settings.tab_settings.other_tags
+      type: codeeditor
+      tab: sensory5.seo::lang.settings.tab_settings.label
+      commentAbove: sensory5.seo::lang.settings.tab_settings.other_tags_comment_above
+      comment: sensory5.seo::lang.settings.tab_settings.other_tags_comment
+
+    endbody_tags:
+      label: sensory5.seo::lang.settings.tab_settings.endbody_tags
+      type: codeeditor
+      tab: sensory5.seo::lang.settings.tab_settings.label
+      commentAbove: sensory5.seo::lang.settings.tab_settings.endbody_tags_comment_above
+      comment: sensory5.seo::lang.settings.tab_settings.endbody_tags_comment
+
+    og_tags_description:
+      type: hint
+      path: $/sensory5/seo/models/settings/_og_tags_description.htm
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+    enable_og_tags:
+      label: sensory5.seo::lang.settings.tab_og.og
+      type: switch
+      comment: sensory5.seo::lang.settings.tab_og.og_comment
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+    og_sitename:
+      label: sensory5.seo::lang.settings.tab_og.sitename
+      type: text
+      comment: sensory5.seo::lang.settings.tab_og.sitename_comment
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+    og_fb_appid:
+      label: sensory5.seo::lang.settings.tab_og.fb
+      comment: sensory5.seo::lang.settings.tab_og.fb_comment
+      type: text
+      span: left
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+
+
+
+
+
