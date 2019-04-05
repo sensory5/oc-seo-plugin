@@ -1,2 +1,2 @@
 # oc-seo-plugin
-SEO Plugin for Sensory 5 October Sites
+SEO Plugin for October CMS sites built by Sensory 5
