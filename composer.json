@@ -1,0 +1,17 @@
+{
+    "name": "sensory5/oc-seo-plugin",
+    "description": "SEO plugin for S5 October CMS sites",
+    "type": "october-plugin",
+    "require": {
+        "composer/installers": "~1.5"
+    },
+    "extra": {
+      "installer-name": "seo"
+    },
+    "authors": [
+        {
+            "name": "Sensory 5",
+            "email": "sysadmin@sensory5.com"
+        }
+    ]
+}
