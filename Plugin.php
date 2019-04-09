@@ -71,39 +71,39 @@ class Plugin extends PluginBase
             if (PluginManager::instance()->hasPlugin('RainLab.Blog') &&
                 $widget->model instanceof \RainLab\Blog\Models\Post) {
                 $widget->addSecondaryTabFields([
-                    'meta_title' => [
+                    's5_seo_meta_title' => [
                         'label' => 'sensory5.seo::lang.editor.meta_title',
                         'type' => 'text',
                         'span' => 'full',
                         'tab' => 'cms::lang.editor.meta'
                     ],
-                    'meta_description' => [
+                    's5_seo_meta_description' => [
                         'label' => 'sensory5.seo::lang.editor.meta_description',
                         'type' => 'textarea',
                         'size' => 'tiny',
                         'span' => 'full',
                         'tab' => 'cms::lang.editor.meta'
                     ],
-                    'meta_keywords' => [
+                    's5_seo_meta_keywords' => [
                         'label' => 'sensory5.seo::lang.editor.meta_keywords',
                         'type' => 'textarea',
                         'size' => 'tiny',
                         'span' => 'full',
                         'tab' => 'cms::lang.editor.meta'
                     ],
-                    'canonical_url' => [
+                    's5_seo_canonical_url' => [
                         'label' => 'sensory5.seo::lang.editor.canonical_url',
                         'type' => 'text',
                         'span' => 'left',
                         'tab' => 'cms::lang.editor.meta'
                     ],
-                    'redirect_url' => [
+                    's5_seo_redirect_url' => [
                         'label' => 'sensory5.seo::lang.editor.redirect_url',
                         'type' => 'text',
                         'span' => 'right',
                         'tab' => 'cms::lang.editor.meta'
                     ],
-                    'robot_index' => [
+                    's5_seo_robot_index' => [
                         'label' => 'sensory5.seo::lang.editor.robot_index',
                         'type' => 'dropdown',
                         'span' => 'left',
@@ -111,7 +111,7 @@ class Plugin extends PluginBase
                         'options' => $this->getIndexOptions(),
                         'default' => 'index'
                     ],
-                    'robot_follow' => [
+                    's5_seo_robot_follow' => [
                         'label' => 'sensory5.seo::lang.editor.robot_follow',
                         'type' => 'dropdown',
                         'span' => 'right',
