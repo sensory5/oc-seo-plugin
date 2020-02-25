@@ -168,17 +168,6 @@ class Plugin extends PluginBase
 
         });
 
-        \Event::listen('cms.page.end', function($controller) {
-
-            if (!$controller->getLayout()->hasComponent('SeoMeta')) { return; }
-
-            $component = $controller->getLayout()->components['SeoMeta'];
-
-            if ($component) {
-                $component->generateMeta();
-            }
-
-        });
     }
 
 

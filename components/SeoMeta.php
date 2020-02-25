@@ -42,6 +42,7 @@ class SeoMeta extends ComponentBase
 
     public function onRun()
     {
+        $this->generateMeta();
     }
 
     public function generateMeta()

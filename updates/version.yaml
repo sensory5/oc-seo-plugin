@@ -1,3 +1,5 @@
 1.0.1:
   - First version of S5 Seo Extension
   - add_meta_fields_to_blog_posts.php
+1.0.2:
+  - Fixed generation of meta when using from partial
