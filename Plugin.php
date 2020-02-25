@@ -16,8 +16,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'sensory5.seo::lang.plugin.name',
-            'description' => 'sensory5.seo::lang.plugin.description',
+            'name' => 'S5 SEO Extension',
+            'description' => 'Provide SEO Extensions to October CMS Pages, Static Pages, Blog post',
             'author' => 'Sensory 5',
             'icon' => 'icon-search'
         ];
