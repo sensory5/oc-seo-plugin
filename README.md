@@ -38,9 +38,13 @@ For example:
         </head>
         <body>
            {% page %}
+
+           {% component 'SeoEndBody' %}
         </body>
     </html>
 ``````````````````
+
+> Note: these components can go into a `head` or `endbody` partial instead.
 
 ####Configuration
 
