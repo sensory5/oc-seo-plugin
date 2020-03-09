@@ -3,3 +3,5 @@
   - add_meta_fields_to_blog_posts.php
 1.0.2:
   - Fixed generation of meta when using from partial
+1.0.3:
+  - Added default meta description in settings
