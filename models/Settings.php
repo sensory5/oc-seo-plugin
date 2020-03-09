@@ -4,6 +4,8 @@ use Model;
 
 class Settings extends Model {
 
+    use \October\Rain\Database\Traits\Validation;
+
     public $implement = ['System.Behaviors.SettingsModel'];
 
     // A unique code
@@ -15,5 +17,10 @@ class Settings extends Model {
 
     public $attachOne = [
         'og_image' => ['System\Models\File']
+    ];
+
+    public $rules = [
+        'title' => 'required',
+        'description' => 'max:300'
     ];
 }

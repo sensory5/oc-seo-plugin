@@ -28,6 +28,8 @@
             'sitename_comment_above' => 'Prefix or suffix site name in title tag',
             'sitename_comment' => 'Site name | <seo/page/blog title>',
             'sitename_placeholder' => 'Sitename |',
+            'description' => 'Default Description',
+            'description_comment' => 'The default meta description to show if the page does not have it\'s own meta description.',
             'title_position' => 'Site name appears as a',
             'title_position_comment' => 'Select where site name should appear i.e. at start or at end',
             'title_position_prefix' => 'Prefix (at start)',

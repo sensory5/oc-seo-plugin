@@ -32,6 +32,14 @@ tabs:
         prefix: sensory5.seo::lang.settings.tab_settings.title_position_prefix
         suffix: sensory5.seo::lang.settings.tab_settings.title_position_suffix
 
+    description:
+      label: sensory5.seo::lang.settings.tab_settings.description
+      span: full
+      type: textarea
+      size: small
+      comment: sensory5.seo::lang.settings.tab_settings.description_comment
+      tab: sensory5.seo::lang.settings.tab_settings.label
+
     content:
       type: hint
       path: $/sensory5/seo/models/settings/_other_tags_hint.htm

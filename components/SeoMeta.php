@@ -47,6 +47,8 @@ class SeoMeta extends ComponentBase
 
     public function generateMeta()
     {
+        $settings = Settings::instance();
+
         if (!$this->page) { return; }
 
         if (method_exists($this->page, 'hasComponent')) {
@@ -63,13 +65,16 @@ class SeoMeta extends ComponentBase
             $callback('meta_title');
 
         $this->meta_description = $this->pagePointer["meta_description"] = $callback('meta_description');
+
+        if (empty(trim($this->meta_description))) {
+            $this->meta_description = $settings->description;
+        }
+
         $this->meta_keywords = $this->pagePointer["meta_keywords"] = $callback('meta_keywords');
         $this->canonical_url = $this->pagePointer["canonical_url"] = $callback('canonical_url');
         $this->redirect_url = $this->pagePointer["redirect_url"] = $callback('redirect_url');
         $this->robot_follow = $this->pagePointer["robot_follow"] = $callback('robot_follow');
         $this->robot_index = $this->pagePointer["robot_index"] = $callback('robot_index');
-
-        $settings = Settings::instance();
 
         if($settings->enable_og_tags)
         {
