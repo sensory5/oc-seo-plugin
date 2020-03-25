@@ -1,9 +1,10 @@
 <?php namespace Sensory5\Seo;
 
 use Cms\Classes\Theme;
-use Sensory5\Seo\Classes\Helper;
 use System\Classes\PluginBase;
 use System\Classes\PluginManager;
+use Sensory5\Seo\Classes\Helper;
+use Sensory5\Seo\Components\SeoMeta;
 
 /**
  * Sensory 5 seo plugin
@@ -28,6 +29,11 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+
+        \Event::listen('s5.seo.meta', function($component, $post) {
+            $component->generateMeta($post);
+        });
+
         \Event::listen('backend.form.extendFields', function($widget) {
 
             if (PluginManager::instance()->hasPlugin('RainLab.Pages') &&

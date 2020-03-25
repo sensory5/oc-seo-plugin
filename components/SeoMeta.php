@@ -9,6 +9,8 @@ use URL;
 
 class SeoMeta extends ComponentBase
 {
+    /** @var Page
+     */
     public $pagePointer;
     public $meta_title;
     public $meta_description;
@@ -17,7 +19,7 @@ class SeoMeta extends ComponentBase
     public $redirect_url;
     public $robot_index;
     public $robot_follow;
-    public $hasBlog;
+    public $title;
 
     public $ogTitle;
     public $ogUrl;
@@ -26,6 +28,9 @@ class SeoMeta extends ComponentBase
     public $ogFbAppId;
     public $ogLocale;
     public $ogImage;
+
+    private $post;
+    private $generated = false;
 
     public function componentDetails()
     {
@@ -40,14 +45,18 @@ class SeoMeta extends ComponentBase
         return [];
     }
 
-    public function onRun()
+    public function onRender()
     {
-        $this->generateMeta();
+        if (!$this->generated) {
+            \Log::info('dfadsafd');
+            $this->generateMeta();
+        }
     }
 
-    public function generateMeta()
+    public function generateMeta($post = null)
     {
         $settings = Settings::instance();
+        $this->post = $post;
 
         if (!$this->page) { return; }
 
@@ -57,6 +66,11 @@ class SeoMeta extends ComponentBase
         else {
             $this->pagePointer = $this->page->page;
         }
+
+        if ($this->pagePointer->hasComponent('blogPost') && is_null($post)) {
+            return;
+        }
+        \Log::info('post has data');
 
         $callback = [$this, $this->getCallback()];
 
@@ -85,6 +99,7 @@ class SeoMeta extends ComponentBase
             $this->ogFbAppId = $settings->og_fb_appid;
         }
 
+        $this->generated = true;
         $this->renderPartial('@meta');
     }
 
@@ -104,7 +119,6 @@ class SeoMeta extends ComponentBase
             return 'cmsMeta';
         }
     }
-
 
     /**
      * Get data from a page
@@ -137,7 +151,13 @@ class SeoMeta extends ComponentBase
      */
     private function blogMeta($attribute)
     {
-        return trim($this->pagePointer->post->{'s5_seo_'.$attribute});
+        if (!$this->post) { return ''; }
+        if ($attribute == 'title') {
+            return trim($this->post->{$attribute});
+        }
+        else {
+            return trim($this->post->{'s5_seo_'.$attribute});
+        }
     }
 
 }
