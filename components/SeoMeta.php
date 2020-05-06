@@ -48,7 +48,6 @@ class SeoMeta extends ComponentBase
     public function onRender()
     {
         if (!$this->generated) {
-            \Log::info('dfadsafd');
             $this->generateMeta();
         }
     }
@@ -70,7 +69,6 @@ class SeoMeta extends ComponentBase
         if ($this->pagePointer->hasComponent('blogPost') && is_null($post)) {
             return;
         }
-        \Log::info('post has data');
 
         $callback = [$this, $this->getCallback()];
 
