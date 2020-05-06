@@ -7,3 +7,5 @@
   - Added default meta description in settings
 1.0.4:
   - Adding ability to use blog component on page again
+1.0.5:
+  - Removing logs
