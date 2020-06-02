@@ -9,3 +9,5 @@
   - Adding ability to use blog component on page again
 1.0.5:
   - Removing logs
+1.1.0:
+  - Adding og image and twitter card
