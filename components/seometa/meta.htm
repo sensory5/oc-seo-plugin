@@ -1,51 +1,105 @@
 {% put s5_seo_meta %}
-    {% if __SELF__.redirect_url %}
-    <meta http-equiv="refresh" content="0; url={{__SELF__.redirect_url}}" />
-    {% endif %}
+  {%- if __SELF__.redirect_url %}
+<meta http-equiv="refresh" content="0; url={{__SELF__.redirect_url}}" />
+  {% endif %}
 
-    {% if __SELF__.meta_title %}
-    <title>{{__SELF__.meta_title | seoTitle}}</title>
-    {% else %}
-    <title>{{__SELF__.title | seoTitle}}</title>
-    {% endif %}
+  {%- if __SELF__.meta_title %}
+<title>{{__SELF__.meta_title | seoTitle}}</title>
+  {% else %}
+<title>{{__SELF__.title | seoTitle}}</title>
+  {% endif %}
 
-    {% if __SELF__.meta_description %}
-    <meta name="description" content="{{__SELF__.meta_description}}">
-    {% endif %}
+  {%- if __SELF__.meta_description %}
+<meta name="description" content="{{__SELF__.meta_description}}">
+  {% endif %}
 
-    {% if __SELF__.meta_keywords %}
-    <meta name="keywords" content="{{__SELF__.meta_keywords}}">
-    {% endif %}
+  {%- if __SELF__.meta_keywords %}
+<meta name="keywords" content="{{__SELF__.meta_keywords}}">
+  {% endif %}
 
-    {% if __SELF__.canonical_url %}
-    <link rel="canonical" href="{{__SELF__.canonical_url}}" />
-    {% else %}
-    {{ '' | seoCanonicalUrl}}
-    {% endif %}
+  {%- if __SELF__.canonical_url %}
+<link rel="canonical" href="{{__SELF__.canonical_url}}" />
+  {%- else %}
+{{ '' | seoCanonicalUrl}}
+  {% endif %}
 
-    {% if __SELF__.robot_index and __SELF__.robot_follow %}
-    <meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">
-    {% endif %}
+  {%- if __SELF__.robot_index and __SELF__.robot_follow %}
+<meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">
+  {% endif %}
 
-    {{ ''|seoOtherMetaTags|raw }}
+{{ ''|seoOtherMetaTags|raw }}
+
+  {%- if __SELF__.ogEnable %}
 
     {% if __SELF__.ogTitle %}
-    <meta property="og:title" content="{{ __SELF__.ogTitle }}" />
+<meta property="og:title" content="{{ __SELF__.ogTitle }}" />
     {% endif %}
 
-    {% if __SELF__.ogUrl %}
-    <meta property="og:url" content="{{ __SELF__.ogUrl }}" />
+    {%- if __SELF__.ogUrl %}
+<meta property="og:url" content="{{ __SELF__.ogUrl }}" />
     {% endif %}
 
-    {% if __SELF__.ogSiteName %}
-    <meta property="og:site_name" content="{{ __SELF__.ogSiteName }}" />
+    {%- if __SELF__.ogType %}
+<meta property="og:type" content="{{ __SELF__.ogType }}" />
     {% endif %}
 
-    {% if __SELF__.ogDescription %}
-    <meta property="og:description" content="{{ __SELF__.ogDescription }}" />
+    {%- if __SELF__.ogImage %}
+<meta property="og:image" content="{{ __SELF__.ogImage|media }}" />
     {% endif %}
 
-    {% if __SELF__.ogFbAppId %}
-    <meta property="fb:app_id" content="{{ __SELF__.ogFbAppId  }}" />
+    {%- if __SELF__.ogEnableImageSize %}
+
+      {%- if __SELF__.ogImageWidth %}
+<meta property="og:image:width" content="{{ __SELF__.ogImageWidth }}" />
+      {% endif %}
+
+      {%- if __SELF__.ogImageHeight %}
+<meta property="og:image:height" content="{{ __SELF__.ogImageHeight }}" />
+      {% endif %}
+
     {% endif %}
+
+    {%- if __SELF__.ogSiteName %}
+<meta property="og:site_name" content="{{ __SELF__.ogSiteName }}" />
+    {% endif %}
+
+    {%- if __SELF__.ogDescription %}
+<meta property="og:description" content="{{ __SELF__.ogDescription }}" />
+    {% endif %}
+
+    {%- if __SELF__.ogFbAppId %}
+<meta property="fb:app_id" content="{{ __SELF__.ogFbAppId  }}" />
+    {% endif %}
+
+  {% endif -%}
+
+  {% if __SELF__.twitterEnable %}
+
+    {% if __SELF__.twitterCard %}
+<meta name="twitter:card" content="{{ __SELF__.twitterCard }}" />
+    {% endif %}
+
+    {%- if __SELF__.twitterCreator %}
+<meta name="twitter:site" content="{{ __SELF__.twitterCreator }}" />
+    <meta name="twitter:creator" content="{{ __SELF__.twitterCreator }}" />
+    {% endif %}
+
+    {%- if __SELF__.twitterTitle %}
+<meta name="twitter:title" content="{{ __SELF__.twitterTitle }}" />
+    {% endif %}
+
+    {%- if __SELF__.twitterUrl %}
+<meta name="twitter:url" content="{{ __SELF__.twitterUrl }}" />
+    {% endif %}
+
+    {%- if __SELF__.twitterImage %}
+<meta name="twitter:image" content="{{ __SELF__.twitterImage|media }}" />
+    {% endif -%}
+
+    {%- if __SELF__.twitterDescription %}
+<meta name="twitter:description" content="{{ __SELF__.twitterDescription }}" />
+    {% endif -%}
+
+  {% endif %}
 {% endput %}
+

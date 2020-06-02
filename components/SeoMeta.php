@@ -21,6 +21,9 @@ class SeoMeta extends ComponentBase
     public $robot_follow;
     public $title;
 
+    public $ogEnable;
+    public $ogEnableImageSize;
+    public $ogType;
     public $ogTitle;
     public $ogUrl;
     public $ogDescription;
@@ -28,6 +31,16 @@ class SeoMeta extends ComponentBase
     public $ogFbAppId;
     public $ogLocale;
     public $ogImage;
+    public $ogImageWidth;
+    public $ogImageHeight;
+
+    public $twitterEnable;
+    public $twitterCard;
+    public $twitterCreator;
+    public $twitterTitle;
+    public $twitterUrl;
+    public $twitterDescription;
+    public $twitterImage;
 
     private $post;
     private $generated = false;
@@ -88,13 +101,30 @@ class SeoMeta extends ComponentBase
         $this->robot_follow = $this->pagePointer["robot_follow"] = $callback('robot_follow');
         $this->robot_index = $this->pagePointer["robot_index"] = $callback('robot_index');
 
-        if($settings->enable_og_tags)
+        $this->ogEnable = $settings->enable_og_tags;
+        if($this->ogEnable)
         {
             $this->ogTitle = empty($callback('meta_title')) ? $callback('title') : $callback('meta_title');
             $this->ogDescription = $callback('meta_description');
             $this->ogUrl = empty($callback('canonical_url')) ? Request::url() : $callback('canonical_url');
             $this->ogSiteName = $settings->og_sitename;
             $this->ogFbAppId = $settings->og_fb_appid;
+            $this->ogType = 'website';
+            $this->ogImage = $settings->og_image_src;
+            $this->ogEnableImageSize = $settings->enable_og_image_size;
+            $this->ogImageWidth = $settings->og_image_width;
+            $this->ogImageHeight = $settings->og_image_height;
+        }
+
+        $this->twitterEnable = $settings->enable_twitter_card;
+        if($this->twitterEnable)
+        {
+            $this->twitterTitle = empty($callback('meta_title')) ? $callback('title') : $callback('meta_title');
+            $this->twitterDescription = $callback('meta_description');
+            $this->twitterUrl = empty($callback('canonical_url')) ? Request::url() : $callback('canonical_url');
+            $this->twitterCard = $settings->twitter_card;
+            $this->twitterCreator = $settings->twitter_creator;
+            $this->twitterImage = $settings->twitter_image;
         }
 
         $this->generated = true;

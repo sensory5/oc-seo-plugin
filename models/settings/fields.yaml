@@ -59,11 +59,6 @@ tabs:
       commentAbove: sensory5.seo::lang.settings.tab_settings.endbody_tags_comment_above
       comment: sensory5.seo::lang.settings.tab_settings.endbody_tags_comment
 
-    og_tags_description:
-      type: hint
-      path: $/sensory5/seo/models/settings/_og_tags_description.htm
-      tab: sensory5.seo::lang.settings.tab_og.label
-
     enable_og_tags:
       label: sensory5.seo::lang.settings.tab_og.og
       type: switch
@@ -83,7 +78,76 @@ tabs:
       span: left
       tab: sensory5.seo::lang.settings.tab_og.label
 
+    og_image_src:
+      label: sensory5.seo::lang.settings.tab_og.image
+      comment: sensory5.seo::lang.settings.tab_og.image_comment
+      type: mediafinder
+      mode: image
+      prompt: "%s Select an image"
+      imageWidth: 250
+      imageHeight: 250
+      span: left
+      tab: sensory5.seo::lang.settings.tab_og.label
 
+    enable_og_image_size:
+      label: sensory5.seo::lang.settings.tab_og.enable_image_size
+      type: switch
+      comment: sensory5.seo::lang.settings.tab_og.enable_image_size_comment
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+    og_image_width:
+      label: sensory5.seo::lang.settings.tab_og.image_width
+      comment: sensory5.seo::lang.settings.tab_og.image_width_comment
+      type: number
+      trigger:
+        action: show
+        field: enable_og_image_size
+        condition: checked
+      span: left
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+    og_image_height:
+      label: sensory5.seo::lang.settings.tab_og.image_height
+      comment: sensory5.seo::lang.settings.tab_og.image_height_comment
+      type: number
+      trigger:
+        action: show
+        field: enable_og_image_size
+        condition: checked
+      span: left
+      tab: sensory5.seo::lang.settings.tab_og.label
+
+    enable_twitter_card:
+      label: sensory5.seo::lang.settings.tab_twitter.twitter
+      type: switch
+      comment: sensory5.seo::lang.settings.tab_twitter.twitter_comment
+      tab: sensory5.seo::lang.settings.tab_twitter.label
+
+    twitter_card:
+      label: sensory5.seo::lang.settings.tab_twitter.card
+      type: dropdown
+      options:
+        summary: "Summary"
+        summary_large_image: "Summary with Large Image"
+      comment: sensory5.seo::lang.settings.tab_twitter.card_comment
+      tab: sensory5.seo::lang.settings.tab_twitter.label
+
+    twitter_creator:
+      label: sensory5.seo::lang.settings.tab_twitter.creator
+      type: text
+      comment: sensory5.seo::lang.settings.tab_twitter.creator_comment
+      tab: sensory5.seo::lang.settings.tab_twitter.label
+
+    twitter_image:
+      label: sensory5.seo::lang.settings.tab_twitter.image
+      comment: sensory5.seo::lang.settings.tab_twitter.image_comment
+      type: mediafinder
+      mode: image
+      prompt: "%s Select an image"
+      imageWidth: 250
+      imageHeight: 250
+      span: left
+      tab: sensory5.seo::lang.settings.tab_twitter.label
 
 
 
